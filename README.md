@@ -1,6 +1,17 @@
 # Face Recognition Application
 
-This is a Python-based face recognition project using the `face_recognition` and `OpenCV` libraries. The application allows users to recognize faces in images and videos using a preloaded dataset of known faces.
+> **Your face recognizer in images and videos.**
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-green?logo=linux)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Version](https://img.shields.io/badge/Version-2.0-orange)
+
+---
+
+## 🧠 Overview
+
+**Face Recognition Application** is a Python-based face recognition project using the `face_recognition` and `OpenCV` libraries. The application allows users to recognize faces in images and videos using a preloaded dataset of known faces.
 
 ## Features
 - Load known faces from a dataset.
