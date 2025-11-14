@@ -5,28 +5,38 @@
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-green?logo=linux)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
-![Version](https://img.shields.io/badge/Version-3.0-orange)
+![Version](https://img.shields.io/badge/Version-4.0-orange)
 
 ---
 
 ## 🧠 Overview
 
-**Face Recognition Application** is a Python-based face recognition project using the `face_recognition` and `OpenCV` libraries. The application allows users to recognize faces in images and videos using a preloaded dataset of known faces.
+**PersonaCipher** is a Python-based face recognition project using the `face_recognition` and `OpenCV` libraries. The application allows users to recognize faces in images and videos using a preloaded dataset of known faces.
 
-## Features
-- Load known faces from a dataset.
-- Recognize faces in a given image.
-- Recognize faces in a given video.
-- User-friendly command-line interface.
+## ✨ Features
+
+✔️ **Recognize faces in images**
+
+✔️ **Recognize faces in videos (MP4)**
+
+✔️ **Auto-scale frames for fast performance**
+
+✔️ **Auto-create datasets from usernames**
+
+✔️ **Automatic image fetching (10 per user)**
+
+✔️ **MP4 downloader for online videos**
+
+✔️ **CLI interface with ASCII art banner**
+
+✔️ **Windows & Linux compatible**
 
 ## Requirements
 ```bash
 python3 -m venv myvenv
 source myvenv/bin/activate
-pip3 install face_recognition opencv-python numpy dlib requests bs4 pyfiglet colorama;python3 -m pip install --upgrade pip setuptools wheel
+pip3 install face_recognition opencv-python numpy dlib requests bs4 pyfiglet colorama yt_dlp;python3 -m pip install --upgrade pip setuptools wheel
 ```
-
-## Usage
 ### Clone the repository:
 
 For Windows using powershell (download the zip file ):
@@ -43,10 +53,10 @@ For Linux:
     cd PersonaCipher
     
 ### 1. Prepare the Dataset
-Place images of known people inside a dataset directory (default: `dataset2`). Each person's images should be inside a folder named after them. Example structure:
+Place images of known people inside a dataset directory (default: `known_faces`). Each person's images should be inside a folder named after them. Example structure:
 
 ```
-dataset2/
+known_faces/
   ├── John_Doe/
   │   ├── img1.jpg
   │   ├── img2.jpg
@@ -55,41 +65,50 @@ dataset2/
   │   ├── img2.jpg
 ```
 
-### Note: you can skip creating **/dataset2** manually and just edit the **usernames.txt** and then create it automatically using:
+But you do not need to create it manually.
+### Auto-Generate Dataset
+1. Edit the names in:
+`usernames.txt`
+2.Run:
 ```bash
 python3 create_dataset.py
 ```
+The script will:
 
-### 2. Run the Application
-Execute the script using:
+1. Create folders
+2. Download 10 images per user
+3. Build a complete dataset automatically
 
+## Usage
+### Run PersonaCipher
 ```bash
 python3 persona_cipher.py
 ```
-
-### 3. Select an Option from the Menu
+### Menu Options 
 - **Recognize faces in an image**: Provide the image path when prompted.
 - **Recognize faces in a video**: Provide the video file path when prompted.
 - **Exit**: Close the application.
 
 ## Functionality Overview
 
-### `load_known_faces(dataset_dir='dataset2')`
+### MP4 Downloader
+Download any video URL:
+```bash
+python3 mp4_downloader.py
+```
+### `load_known_faces()`
 Loads face encodings from the dataset directory and stores them for recognition.
 
-### `recognize_faces_in_image(image_path)`
+### `recognize_faces_in_image()`
 - Detects and recognizes faces in a provided image.
 - Draws a rectangle around recognized faces and labels them.
 
-### `recognize_faces_in_video(mp4_path)`
+### `recognize_faces_in_video()`
 - Processes frames from a video file.
 - Detects and recognizes known faces in real-time.
 - Draws bounding boxes and labels recognized faces.
-
-### `main_menu()`
-A user-friendly menu to select image or video recognition.
-
-### Support for fetching 10 images related to each username in **usernames.txt**:
+  
+### Dataset Generator
 ```bash
 python3 create_dataset.py
 ```
@@ -101,13 +120,11 @@ python3 create_dataset.py
 
 
 ## Notes
-- The face recognition model uses the HOG-based feature extraction method.
-- Ensure to edit the usernames inside the **usernames.txt** and then run the create_dataset.py as shown above.
-- You can adjust the face matching threshold (`0.6` in the script) to fine-tune accuracy.
-- The program has been tested on a linux machine, make sure to follow other guids on how to install the dependencies mentioned above for windows.
-- It’s simple to run on both Linux and Windows after installing the required dependencies.
-- Press `q` to exit video processing.
-
+- Uses HOG-based face detection
+- Threshold for matching: 0.6
+- Works on both Linux and Windows
+- Avoid noisy datasets for best recognition
+- Press q to exit video mode
 
 ## 📜 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
