@@ -46,7 +46,7 @@ def download_images_for_person(person_name):
     print(f"Searching images for {person_name}...")
     img_urls = fetch_image_urls(person_name)
 
-    folder_name = f"dataset2/{person_name.replace(' ', '_')}"
+    folder_name = f"known_faces/{person_name.replace(' ', '_')}"
     image_count = 0
 
     # Download the first 10 images
