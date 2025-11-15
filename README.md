@@ -70,17 +70,6 @@ Note:  If you are using linux then go read the [TODO](TODO.md) to set everything
 │   │   │   ├── img7.jpg
 │   │   │   ├── img8.jpg
 │   │   │   └── img9.jpg
-│   │   └── Ronaldo
-│   │       ├── img10.jpg
-│   │       ├── img1.jpg
-│   │       ├── img2.jpg
-│   │       ├── img3.jpg
-│   │       ├── img4.jpg
-│   │       ├── img5.jpg
-│   │       ├── img6.jpg
-│   │       ├── img7.jpg
-│   │       ├── img8.jpg
-│   │       └── img9.jpg
 │   └── videos
 │       └── video.mp4
 ├── datasets
@@ -93,7 +82,7 @@ Note:  If you are using linux then go read the [TODO](TODO.md) to set everything
 ├── LICENSE
 ├── README.md
 ├── requirements.txt
-├── setup.sh
+├── linux_setup.sh
 └── src
     ├── create_dataset.py
     ├── mp4_downloader.py
